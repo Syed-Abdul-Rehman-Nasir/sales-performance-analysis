@@ -1,0 +1,26 @@
+# Local-only folders (not published to GitHub)
+powerbi/
+docs/
+assets/
+
+# Power BI artifacts
+*.pbix
+*.pbit
+*.pbids
+
+# Office / temp files
+~$*
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / editor
+.vscode/
+.cursor/
+*.code-workspace
+
+# Logs
+*.log
