@@ -31,35 +31,7 @@ Raw warehouse tables were messy: inconsistent naming, unfiltered history, missin
 
 ## 📐 Data Model
 
-Star schema with one central fact table, three conformed dimensions, and an external budget table:
-
-```
-                    ┌──────────────┐
-                    │ DIM_Calendar │
-                    │──────────────│
-              ┌───▶│  DateKey(PK)  │◀───┐
-              │     │  Date        │     │
-              │     │  Month       │     │
-              │     │  Quarter     │     │
-              │     │  Year        │     │
-              │     └──────────────┘     │
-              │                          │
-┌─────────────┴──────────────────────────┴────────────┐
-│                  FACT_InternetSales                 │
-│─────────────────────────────────────────────────────│
-│  ProductKey  ──────────────────────────────────────▶ DIM_Product
-│  OrderDateKey ─────────────────────────────────────▶ DIM_Calendar
-│  DueDateKey  ──────────────────────────────────────▶ DIM_Calendar (role-playing)
-│  ShipDateKey ──────────────────────────────────────▶ DIM_Calendar (role-playing)
-│  CustomerKey ──────────────────────────────────────▶ DIM_Customer
-│  SalesOrderNumber                                    │
-│  SalesAmount                                         │
-└──────────────────────────────────────────────────────┘
-                                          ▲
-                                    Fact_Budget
-                                    (joins on Date)
-```
-
+![Image](thumm.png)
 **Join key reference:**
 
 | Fact Column | Dimension | Cardinality |
