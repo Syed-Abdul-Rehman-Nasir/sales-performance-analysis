@@ -31,7 +31,7 @@ Raw warehouse tables were messy: inconsistent naming, unfiltered history, missin
 
 ## 📐 Data Model
 
-<img src="thumm.png" width="300"/>
+<img src="thumm.png" width="600"/>
 **Join key reference:**
 
 | Fact Column | Dimension | Cardinality |
